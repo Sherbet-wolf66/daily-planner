@@ -1,0 +1,11 @@
+input("would you like to add an event?: ")
+y= ("yes")
+n = ("no")
+
+if y: 
+    input("what is the name of the event?: ")
+    input("what is the date of the event?: ")
+    input("what is the time of the event?: ")
+    input("what is the end time of the event?: ")
+else:
+    print ("All finished! Have a good rest of your day")
