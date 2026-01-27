@@ -7,5 +7,6 @@ if y:
     input("what is the date of the event?: ")
     input("what is the time of the event?: ")
     input("what is the end time of the event?: ")
+    input("Are there any other events you would like to add?: ")
 else:
     print ("All finished! Have a good rest of your day")
