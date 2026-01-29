@@ -1,12 +1,30 @@
-input("would you like to add an event?: ")
-y= ("yes")
-n = ("no")
 
-if y: 
+def event_name():
     input("what is the name of the event?: ")
+    return
+
+def event_date():
     input("what is the date of the event?: ")
+    return
+
+def event_time():
     input("what is the time of the event?: ")
+    return
+
+def event_endtime():
     input("what is the end time of the event?: ")
+    return
+
+def repeat():
     input("Are there any other events you would like to add?: ")
-else:
-    print ("All finished! Have a good rest of your day")
+    return
+
+
+event_name()
+event_date()
+event_time()
+event_endtime()
+repeat()
+print ("All finished! Have a good rest of your day")
+
+
