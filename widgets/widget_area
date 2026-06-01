@@ -32,7 +32,7 @@ class MainWindow(QMainWindow):
         submit_button = QPushButton("Submit")
         submit_button.clicked.connect(self.get_input)
 
-        self.instructions = "Enter the name of the event, then click the continue button."
+        self.instructions = "Enter the name of the event, then click the continue button. Make sure to capitalize your event's name!"
         self.output_label = QLabel(self.instructions)
 
         layout.addWidget(title_label)
@@ -58,7 +58,7 @@ class MainWindow(QMainWindow):
 
         if not event_name:
                 output = "Warning: you did not enter an event. Please enter "
-                output += "the event name."
+                output += "the event name. Please make sure to capitalize your event's name!"
         else:
             output = f"{event_name} on {date_str} "
             
