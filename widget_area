@@ -1,0 +1,43 @@
+
+
+import sys
+from PySide6.QtWidgets import (
+    QApplication,
+    QLabel,
+    QLineEdit,
+    QMainWindow,
+    QPushButton,
+    QVBoxLayout,
+    QWidget,
+)
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        self.setWindowTitle("Daily Planner")
+        self.setContentsMargins(12, 12, 12, 12)
+        self.resize(640, 480)
+
+        title_label = QLabel("Welcome to the daily planner! This will help you keep track of events.")
+
+        self.username_input = QLineEdit(placeholderText="Name")
+
+        submit_button = QPushButton("Submit")
+        submit_button.clicked.connect(self.get_input)
+
+        self.instructions = "Enter the name of the event, then click the continue button."
+        self.output_label = QLabel(self.instructions)
+
+        layout.addWidget(title_label)
+        layout.addWidget(self.username_input)
+        layout.addWidget(submit_button)
+        layout.addWidget(self.output_label)
+        layout.addStretch()
+
+        widget = QWidget()
+        widget.setLayout(layout)
+        self.setCentralWidget(widget)
+
+def get_input(self):
+    
