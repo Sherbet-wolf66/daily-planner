@@ -3,6 +3,7 @@
 import sys
 from PySide6.QtWidgets import (
     QApplication,
+    QCalendarWidget,
     QLabel,
     QLineEdit,
     QMainWindow,
@@ -18,10 +19,15 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Daily Planner")
         self.setContentsMargins(12, 12, 12, 12)
         self.resize(640, 480)
+        layout = QVBoxLayout()
 
         title_label = QLabel("Welcome to the daily planner! This will help you keep track of events.")
 
-        self.username_input = QLineEdit(placeholderText="Name")
+        self.event_input = QLineEdit(placeholderText="Name")
+
+        #calendar
+        cal_label = QLabel("Select day ")
+        self.cal_input = QCalendarWidget()
 
         submit_button = QPushButton("Submit")
         submit_button.clicked.connect(self.get_input)
@@ -30,7 +36,9 @@ class MainWindow(QMainWindow):
         self.output_label = QLabel(self.instructions)
 
         layout.addWidget(title_label)
-        layout.addWidget(self.username_input)
+        layout.addWidget(self.event_input)
+        layout.addWidget(cal_label)
+        layout.addWidget(self.cal_input)
         layout.addWidget(submit_button)
         layout.addWidget(self.output_label)
         layout.addStretch()
@@ -39,17 +47,23 @@ class MainWindow(QMainWindow):
         widget.setLayout(layout)
         self.setCentralWidget(widget)
 
-def get_input(self):
-    output = ""
-    event_name = self.username_input.text()
+    def get_input(self):
+        output = ""
+        event_name = self.event_input.text()
 
-    if not name:
-            output = "Warning: you did not enter an event. Please enter "
-            output += "the event name."
-    else:
-           output = f"You entered {event_name} as your event"
-           
-    self.output_label.setText(output)
+        date = self.cal_input.selectedDate()
+        day = date.day()
+        month = date.month()
+        date_str = date.toString()
+
+        if not event_name:
+                output = "Warning: you did not enter an event. Please enter "
+                output += "the event name."
+        else:
+            output = f"{event_name} on {date_str} "
+            
+        
+        self.output_label.setText(output)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

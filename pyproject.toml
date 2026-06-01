@@ -3,11 +3,12 @@ name = "daily-planner"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Sherbet-wolf66" ,email = "punkysue08@gmail.com"}
+    {name = "Sherbet-wolf66", email = "punkysue08@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12,<3.15"
 dependencies = [
+    "pyside6 (>=6.11.1,<7.0.0)"
 ]
 
 [tool.poetry]
