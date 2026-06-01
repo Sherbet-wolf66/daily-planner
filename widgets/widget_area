@@ -40,4 +40,20 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(widget)
 
 def get_input(self):
-    
+    output = ""
+    event_name = self.username_input.text()
+
+    if not name:
+            output = "Warning: you did not enter an event. Please enter "
+            output += "the event name."
+    else:
+           output = f"You entered {event_name} as your event"
+           
+    self.output_label.setText(output)
+
+    if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+
+    app.exec()
